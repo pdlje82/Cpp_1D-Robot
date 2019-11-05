@@ -68,6 +68,7 @@ vector<float> move(vector<float> p,
         q[i] = s;
     }
 
+
     print_p(p);
     return q;
 }
