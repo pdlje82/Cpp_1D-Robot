@@ -1,12 +1,11 @@
 //
 // Created by Jan Engelke on 04/11/2019.
 //
-#include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
 
-vector<float> sense(vector<float> p, string z ){
+vector<float> sense(vector<float> p, string z, vector<string> world, float pHit, float pMiss ){
     vector<float> q(p.size(), 0);
     for (int i = 0; i < p.size(); i++){
         bool hit = false;
@@ -25,7 +24,7 @@ vector<float> sense(vector<float> p, string z ){
     return q;
 }
 
-vector<float> move(vector<float> p, int u ){
+vector<float> move(vector<float> p, int u, float pExact, float pOvershoot, float pUndershoot ){
     vector<float> q(p.size(), 0);
     for (int i = 0; i < p.size(); i++){
         float s = pExact * p[(i - u) % p.size()];

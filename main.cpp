@@ -16,12 +16,12 @@ int main() {
     float pUndershoot = 0.1;
 
     for (int k = 0; k < measurements.size(); k++ ){
-        p = sense(p, measurements[k]);
-        p = move(p, motions[k]);
+        p = sense(p, measurements[k], world, pHit, pMiss);
+        p = move(p, motions[k], pExact, pOvershoot, pUndershoot);
     }
 
     for (float i : p){      // for (int i = 0; i < p.size(); i++ ){
-        cout << i << endl;  //     cout << p[i] << endl;}
+        cout << i << " ";  //     cout << p[i] << endl;}
     }
     return 0;
 }
