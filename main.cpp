@@ -19,8 +19,10 @@ int main() {
         p = sense(p, measurements[k]);
         p = move(p, motions[k]);
     }
-    for (int i = 0; i < p.size(); i++ ){
-        cout << p[i] << endl;
+
+    for (float i : p){      // for (int i = 0; i < p.size(); i++ ){
+        cout << i << endl;  //     cout << p[i] << endl;}
     }
     return 0;
 }
+
