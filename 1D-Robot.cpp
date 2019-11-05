@@ -8,9 +8,9 @@ using namespace std;
 vector<float> sense(vector<float> p, string z, vector<string> world, float pHit, float pMiss ){
     vector<float> q(p.size(), 0);
     for (int i = 0; i < p.size(); i++){
-        bool hit = false;
+        float hit = 0;
         if (z == world[i]){
-            hit = true;
+            hit = 1;
         }
         q[i] = p[i] * (hit * pHit + (1 - hit) * pMiss);
     }
