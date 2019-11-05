@@ -15,8 +15,10 @@ def sense(p, Z):
         hit = (Z == world[i])
         q.append(p[i] * (hit * pHit + (1-hit) * pMiss))
     s = sum(q)
+    # print(s)
     for i in range(len(q)):
         q[i] = q[i] / s
+    print(q)
     return q
 
 
@@ -27,6 +29,7 @@ def move(p, U):
         s = s + pOvershoot * p[(i-U-1) % len(p)]
         s = s + pUndershoot * p[(i-U+1) % len(p)]
         q.append(s)
+    print(q)
     return q
 
 

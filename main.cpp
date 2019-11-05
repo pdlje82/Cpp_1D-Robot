@@ -19,10 +19,7 @@ int main() {
         p = sense(p, measurements[k], world, pHit, pMiss);
         p = move(p, motions[k], pExact, pOvershoot, pUndershoot);
     }
-
-    for (float i : p){      // for (int i = 0; i < p.size(); i++ ){
-        cout << i << " ";  //     cout << p[i] << endl;}
-    }
+    print_p(p);
     return 0;
 }
 
